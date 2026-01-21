@@ -1,0 +1,86 @@
+.industry {
+  background: radial-gradient(
+      circle at top,
+      #0f2a44,
+      #081521 70%
+    );
+  padding: 120px 24px;
+  color: #fff;
+}
+
+.industry-header {
+  max-width: 700px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.industry-header h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 16px;
+}
+
+.industry-header p {
+  color: #9ca3af;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.industry-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+}
+
+.industry-card {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.06),
+    rgba(255, 255, 255, 0.02)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px 32px;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease;
+}
+
+.industry-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.industry-value {
+  font-size: 46px;
+  font-weight: 700;
+  color: #38bdf8;
+  margin-bottom: 16px;
+}
+
+.industry-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+
+.industry-desc {
+  font-size: 14px;
+  color: #9ca3af;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+
+.industry-source {
+  margin-top: 18px;
+  font-size: 12px;
+  color: #38bdf8;
+  letter-spacing: 0.12em;
+}

@@ -1,0 +1,111 @@
+/* SECTION */
+
+.act-works {
+  background: radial-gradient(circle at top, #12335a, #081827 70%);
+  padding: 120px 24px;
+  color: #ffffff;
+}
+
+/* HEADER */
+
+.act-header {
+  max-width: 900px;
+  margin: 0 auto 80px;
+  text-align: center;
+}
+
+.act-header h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 16px;
+}
+
+.act-subtitle {
+  color: #cbd5e1;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+.act-lifecycle {
+  color: #38bdf8;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* GRID */
+
+.act-grid {
+  max-width: 1200px;
+  margin: 80px auto 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+/* CARD */
+
+.act-card {
+  background: linear-gradient(180deg, #143b63, #0e2a45);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 42px 32px;
+  text-align: center;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.04);
+
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.act-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+/* ICON */
+
+.act-icon {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 14px;
+  transition: transform 0.35s ease;
+}
+
+.act-card:hover .act-icon {
+  transform: scale(1.1);
+}
+
+.act-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: #38bdf8;
+  fill: none;
+  stroke-width: 1.6;
+}
+
+/* STEP */
+
+.act-step {
+  display: block;
+  color: #38bdf8;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* TITLE */
+
+.act-card h4 {
+  color: #7dd3fc;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+/* DESC */
+
+.act-card p {
+  color: #e5e7eb;
+  font-size: 14px;
+  line-height: 1.6;
+}

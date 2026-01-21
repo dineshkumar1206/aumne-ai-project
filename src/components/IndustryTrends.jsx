@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import "./IndustryTrends.css";
 
 const stats = [
   {
@@ -62,25 +63,20 @@ export default function IndustryTrends() {
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
-
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-[#111] text-white py-24 px-6">
-      {/* Heading */}
-      <div className="text-center max-w-3xl mx-auto mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-sky-500 mb-4">
-          Industry Trends
-        </h2>
-        <p className="text-gray-400 text-lg">
+    <section ref={sectionRef} className="industry">
+      <div className="industry-header">
+        <h2>Industry Trends</h2>
+        <p>
           The customer service landscape is rapidly evolving, but many
           organizations struggle with transformation challenges.
         </p>
       </div>
 
-      {/* Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div className="industry-grid">
         {stats.map((item, index) => (
           <StatCard key={index} item={item} visible={visible} delay={index} />
         ))}
@@ -104,10 +100,7 @@ function StatCard({ item, visible, delay }) {
     const animate = (time) => {
       const progress = Math.min((time - startTime) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      const current = Math.floor(eased * end);
-
-      setCount(current);
-
+      setCount(Math.floor(eased * end));
       if (progress < 1) requestAnimationFrame(animate);
     };
 
@@ -116,27 +109,20 @@ function StatCard({ item, visible, delay }) {
 
   return (
     <div
-      className={`bg-[#161616] rounded-2xl p-8 text-center shadow-lg transform transition-all duration-700
-        ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}
-      `}
-      style={{ transitionDelay: `${delay * 100}ms` }}
+      className={`industry-card ${visible ? "show" : ""}`}
+      style={{ transitionDelay: `${delay * 120}ms` }}
     >
-      {/* Number */}
-      <div className="text-sky-500 text-5xl font-bold mb-4">
+      <div className="industry-value">
         {item.prefix}
         {item.noCount ? item.value : count}
         {item.suffix}
       </div>
 
-      {/* Text */}
-      <p className="text-gray-300 font-semibold">{item.title}</p>
-      <p className="text-gray-400 text-sm mt-1">{item.desc}</p>
+      <p className="industry-title">{item.title}</p>
+      <p className="industry-desc">{item.desc}</p>
 
-      {/* Source */}
       {item.source && (
-        <p className="text-sky-500 text-xs mt-4 tracking-widest">
-          — {item.source}
-        </p>
+        <p className="industry-source">— {item.source}</p>
       )}
     </div>
   );
